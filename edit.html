@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Produk</title>
+  <link rel="stylesheet" href="edit.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Edit Produk</h2>
+    <form action="/update-produk/{{ produk.id }}" method="POST">
+      
+      <input type="text" name="nama" value="{{ produk.nama }}">
+      <input type="number" name="harga" value="{{ produk.harga }}">
+      <select name="kategori">
+        <option value="Makanan" {% if produk.kategori == "makanan" %} selected{% endif %}>
+          Makanan
+        </option>
+        
+        <option value="Minuman" {% if produk.kategori == "minuman" %} selected{% endif %}>
+          Minuman
+        </option>
+      </select>
+      
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+  
+  
+  
+</body>
+
+</html>

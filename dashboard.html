@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  <title>TOKOKU.COM</title>
+</head>
+
+<body>
+  
+  <nav class="navbar">
+    <h1>TOKOKU.COM</h1>
+    
+    <div class="container-navbar">
+      <button class="keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+      <button class="hamburger" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+  
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li>
+        <a href="/kategori/Makanan">Makanan</a>
+      </li>
+      <li>
+        <a href="/kategori/Minuman">Minuman</a>
+      </li>
+      <li>
+        <a href="/dashboard">Dashboard</a>
+      </li>
+      
+      <hr>
+      
+      <li>
+        <a href="/login">Login</a>
+      </li>
+      <li>
+        <a href="/register">Daftar</a>
+      </li>
+    </ul>
+  </div>
+  
+  {% if kategori %}
+  
+  <section>
+    <h2>{{ kategori}}</h2>
+    
+    <div class="card-container">
+      {% for produk in products %}
+      
+      <div class="card">
+        <h3>{{ produk.nama }}</h3> 
+        
+        
+        <p>Rp. {{produk.harga }}</p>
+        
+        <div class="button-wrapp">
+          <button class="buy-btn">Beli</button>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+      
+     {% endfor %}
+    </div>
+  </section>
+  
+  {% else %}
+  
+  
+  <h2>Makanan</h2>
+  <section class="card-container">
+    
+    {% for produk in makanan %}
+    
+    <div class="card">
+      <h3>{{ produk.nama }}</h3>
+      <p>Rp. {{produk.harga }}</p>
+      
+      <div class="button-wrapp">
+        <button class="buy-btn">Beli</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  
+  
+  <h2>Minuman</h2>
+  <section class="card-container">
+    {% for produk in minuman %}
+    
+    <div class="card">
+      <h3>{{ produk.nama }}</h3>
+      <p>Rp. {{produk.harga }}</p>
+      
+      <div class="button-wrapp">
+        <button class="buy-btn">Beli</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+  
+  
+  <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+
+</html>

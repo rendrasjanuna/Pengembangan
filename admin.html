@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='admin.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Dashboard Admin</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>TOKOKU.COM</h1>
+        
+        <button class="hamburger" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <hr>
+    <p class="admin">Selamat datang. Admin !</p>
+    
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><i class="fa-solid fa-cart-shopping"></i>Daftar Pesanan</li>
+            <li>
+                <a href="/dashboard">Dashboard</a>
+            </li>
+            <li><i class="fa-solid fa-box"></i>Daftar Produk</li>
+            <li>
+                <a href="/logout"><i class="fa-solid fa-right-form-bracket"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+    
+    <section>
+        
+        <div class="card-admin">
+            <h3>Tambah Produk</h3>
+            
+            <form action="/tambah-produk" method="POST">
+                
+                <input type="text" name="nama" placeholder="Nama Produk" required>
+                
+                <input type="number" name="harga" placeholder="Harga" required>
+                
+                <select name="kategori">
+                    <option value="Makanan">Makanan</option>
+                    
+                    <option value="Minuman">Minuman</option> 
+                </select>
+                <button type="submit">Tambah Produk</button>
+            </form>
+        </div>
+        
+        <h2>Daftar Produk</h2>
+        
+        <div class="card-container">
+            {% for produk in products %}
+            
+            <div class="card">
+                <h4>{{ produk.nama }}</h4>
+                <p>Rp. {{ produk.harga }}</p>
+                <div class="button-card">
+                    <a href="/hapus-produk/{{ produk.id }}" class="btn-hapus">Hapus</a>
+                    <a href="/edit-produk/{{ produk.id }}" class="btn-edit">Edit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script src="admin.js"></script>
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+
+</body>
+</html>
