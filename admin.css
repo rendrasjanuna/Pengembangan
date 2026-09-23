@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  padding: 5px;
+  height: 10vh;
+  justify-content: space-between;
+  background: #505591;
+  align-items: center;
+}
+h1 {
+  font-size: 25px;
+  font-weight: 800;
+  font-style: oblique;
+}
+.hamburger {
+  background: none;
+  border: none;
+  z-index: 5;
+}
+.hamburger .fa-solid {
+  font-size: 25px;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  transition: 1s ease;
+  background: #2B8A7F;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+.sidebar li:hover {
+  background: #F1F1F1;
+}
+.section {
+  max-width: 100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+.admin {
+  font-size: 18px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 25px;
+}
+.card-admin {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 35px 10px;
+}
+.card-admin h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.card-admin form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card-admin input, .card-admin select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px ;
+}
+.card-admin button {
+  padding: 12px;
+  border: none;
+  background: #2196F3;
+  color: white; 
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.card-admin button:hover { 
+  background: #1976D2;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.card {
+  background: #DBDBD7;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+.card h3 {
+  margin-bottom: 10px;
+}
+.card p {
+  margin-bottom: 8px;
+  color: #555;
+}
+.button-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.btn-hapus, .btn-edit {
+  background: #9AB719;
+  padding: 6px;
+  border-radius: 5px;
+}
+.card a {
+  text-decoration: none;
+  color: #152022;
+}

@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #4D42FF;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-weight: 800;
+  font-style: oblique;
+  font-size: 30px;
+  text-shadow: 5px 3px 2px rgba(0,0,0,0.5);
+}
+.container-navbar {
+  display: flex;
+  gap: 10px;
+}
+.hamburger {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2;
+}
+.keranjang {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -150px; /* disembunyikan di luar layar */
+  width: 150px;
+  height: 100vh;
+
+  background: #828B8E;
+
+  box-shadow: -1px 0 10px rgba(0,0,0,.2);
+
+  transition: 0.7s ease;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-top: 70px;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-style: obl;
+}
+
+/* Container produk */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* Card produk */
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Gambar produk */
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Isi card */
+.card h3 {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.card p {
+  margin: 10px;
+  font-size: 14px;
+  color: #555;
+}
+.buy-btn {
+  flex: 1;
+  padding:10px;
+  margin: 3px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #4CAF50;
+  color: white;
+}
+.button-wrapp {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+.cart-btn {
+  width: 20%;
+  margin: 3px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: #2993C5;
+}
